@@ -1,0 +1,32 @@
+<div class="container">
+  <mat-card class="form-container">
+    <form class="form-group">
+      <p>Email</p>
+      <mat-form-field class="input-field">
+        <input matInput />
+      </mat-form-field>
+      <br />
+      <p>Name</p>
+      <mat-form-field class="input-field">
+        <input matInput />
+      </mat-form-field>
+      <br />
+      <p>Bio</p>
+      <mat-form-field class="input-field">
+        <input matInput />
+      </mat-form-field>
+      <div>
+        <p>Active:</p>
+        <div class="radio-btn-container">
+          <mat-radio-button value="yes" [ngStyle]="{ 'margin-right': '2rem' }"
+            >Yes</mat-radio-button
+          >
+          <mat-radio-button value="no">No</mat-radio-button>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button mat-flat-button color="primary" class="btn">Submit</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
