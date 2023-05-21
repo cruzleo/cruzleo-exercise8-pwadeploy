@@ -8,7 +8,7 @@ export class BlogService {
   blogs: Blog[] = [
     {
       id: 1,
-      title: 'Why cats are adorable?',
+      title: 'Why are cats so cute?',
       description:
         'The cat, a domesticated feline mammal, is a beloved companion known for its grace, agility, and independence. With its soft fur, enchanting eyes, and soothing purrs, the cat is both charming and comforting. Whether lounging in sunlit spots or engaging in playful antics, cats bring warmth and joy to our lives, making them a cherished presence in many homes.',
       author: 'Leo Cruz',
