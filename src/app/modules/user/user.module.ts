@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ProfileFormComponent],
@@ -18,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
     MatRadioModule,
     MatButtonModule,
     MatCardModule,
+    ReactiveFormsModule,
   ],
 })
 export class UserModule {}

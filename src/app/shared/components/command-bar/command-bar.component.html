@@ -1,5 +1,4 @@
-<div>
-  <a [routerLink]="'book'"> Book </a>
-  <a [routerLink]="'blog'"> Blog </a>
-  <a [routerLink]="'profile'"> Profile </a>
+<div class="container">
+  <button mat-raised-button (click)="add()">Add</button>
+  <button mat-flat-button color="warn" (click)="deleteAll()">Delete All</button>
 </div>

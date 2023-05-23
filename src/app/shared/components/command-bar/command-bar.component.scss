@@ -1,5 +1,8 @@
-a {
-  color: aliceblue;
-  text-decoration: none;
-  padding-right: 1rem;
+.container {
+  width: 90%;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: end;
+  margin-top: 1rem;
 }

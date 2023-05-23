@@ -1,0 +1,67 @@
+<div class="container">
+  <mat-card class="form-container">
+    <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <h4 for="title">Title</h4>
+        <mat-form-field appearance="outline" class="input-field">
+          <input type="text" matInput formControlName="title" />
+        </mat-form-field>
+        <div *ngIf="title?.invalid && title?.dirty">
+          <div *ngIf="title?.errors?.['required']" class="error">
+            Blog title is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <h4 for="author">Author</h4>
+        <mat-form-field appearance="outline" class="input-field">
+          <input type="text" matInput formControlName="author" />
+        </mat-form-field>
+        <div *ngIf="author?.invalid && author?.dirty">
+          <div *ngIf="author?.errors?.['required']" class="error">
+            Author is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <h4 for="description">Description</h4>
+        <mat-form-field appearance="outline" class="input-field">
+          <textarea
+            type="text"
+            matInput
+            formControlName="description"
+          ></textarea>
+        </mat-form-field>
+        <div *ngIf="description?.invalid && description?.dirty">
+          <div *ngIf="description?.errors?.['required']" class="error">
+            Description is required
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <ng-container formArrayName="comments">
+        <h4 for="comments">Comments</h4>
+        <div *ngFor="let _ of commentsFormArray.controls; index as i">
+          <div>
+            <mat-form-field appearance="outline">
+              <input type="text" matInput [formControlName]="i" />
+            </mat-form-field>
+            <button mat-button (click)="deleteComment(i)">Delete</button>
+          </div>
+        </div>
+        <button type="button" mat-raised-button (click)="addComment()">
+          Add Comment
+        </button>
+      </ng-container>
+
+      <br />
+      <br />
+      <div class="btn-container">
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

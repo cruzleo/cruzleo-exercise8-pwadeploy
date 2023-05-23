@@ -7,26 +7,24 @@ import {
 } from '@angular/core';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../models/book';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.scss'],
 })
-export class BookListComponent implements OnInit, AfterViewInit, OnDestroy {
-  constructor(private BookService: BookService) {}
+export class BookListComponent implements OnInit {
+  constructor(private BookService: BookService, private router: Router) {}
   books: Book[] = [];
 
   ngOnInit(): void {
     this.books = this.BookService.getBooks();
-    console.log(this.books);
   }
 
-  ngAfterViewInit(): void {}
-  ngOnDestroy(): void {}
-
   executeEdit = (id: number) => {
-    console.log('edit book', id);
+    //this.router.navigate([`book/form/${id}`]);
+    this.router.navigate([`book/form`]);
   };
 
   executeDelete = (id: number) => {
@@ -36,5 +34,13 @@ export class BookListComponent implements OnInit, AfterViewInit, OnDestroy {
         this.books[i].isDeleted = true;
       }
     }
+  };
+
+  executeAdd = () => {
+    this.router.navigate(['book/form']);
+  };
+
+  executeDeleteAll = () => {
+    this.books = [];
   };
 }

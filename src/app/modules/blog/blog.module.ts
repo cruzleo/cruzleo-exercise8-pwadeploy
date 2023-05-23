@@ -7,9 +7,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { BlogFormComponent } from './pages/blog-form/blog-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  declarations: [BlogItemComponent, BlogListComponent],
+  declarations: [BlogItemComponent, BlogListComponent, BlogFormComponent],
   imports: [
     CommonModule,
     BlogRoutingModule,
@@ -17,6 +22,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatDividerModule,
     MatIconModule,
     MatButtonModule,
+    SharedModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
 })
 export class BlogModule {}

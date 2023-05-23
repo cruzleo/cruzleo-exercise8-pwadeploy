@@ -1,29 +1,53 @@
 <div class="container">
   <mat-card class="form-container">
-    <form class="form-group">
-      <p>Email</p>
-      <mat-form-field class="input-field">
-        <input matInput />
-      </mat-form-field>
-      <br />
-      <p>Name</p>
-      <mat-form-field class="input-field">
-        <input matInput />
-      </mat-form-field>
-      <br />
-      <p>Bio</p>
-      <mat-form-field class="input-field">
-        <input matInput />
-      </mat-form-field>
-      <div>
-        <p>Active:</p>
-        <div class="radio-btn-container">
-          <mat-radio-button value="yes" [ngStyle]="{ 'margin-right': '2rem' }"
-            >Yes</mat-radio-button
-          >
-          <mat-radio-button value="no">No</mat-radio-button>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <h4 for="email">Email</h4>
+        <mat-form-field class="input-field" appearance="outline">
+          <input matInput type="text" matInput formControlName="email" />
+        </mat-form-field>
+        <div *ngIf="email?.invalid && email?.dirty">
+          <div *ngIf="email?.errors?.['required']" class="error">
+            Email is required
+          </div>
+          <div *ngIf="email?.errors?.['email']" class="error">
+            Email is invalid
+          </div>
         </div>
       </div>
+
+      <div class="form-group">
+        <h4 for="name">Name</h4>
+        <mat-form-field class="input-field" appearance="outline">
+          <input matInput type="text" matInput formControlName="name" />
+        </mat-form-field>
+        <div *ngIf="name?.invalid && name?.dirty">
+          <div *ngIf="name?.errors?.['required']" class="error">
+            Name is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <h4 for="bio">Bio</h4>
+        <mat-form-field class="input-field" appearance="outline">
+          <input matInput type="text" matInput formControlName="bio" />
+        </mat-form-field>
+      </div>
+
+      <div class="radio-container">
+        <h4 for="isActive">Active:</h4>
+        <div class="radio-btn-container">
+          <input type="radio" formControlName="isActive" value="true" />Yes
+          <input
+            type="radio"
+            formControlName="isActive"
+            value="false"
+            [ngStyle]="{ marginLeft: '2rem' }"
+          />No
+        </div>
+      </div>
+
       <div class="btn-container">
         <button mat-flat-button color="primary" class="btn">Submit</button>
       </div>

@@ -1,0 +1,53 @@
+<div class="container">
+  <mat-card class="form-container">
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <h4 for="name">Book Name</h4>
+        <mat-form-field appearance="outline" class="input-field">
+          <input type="text" matInput formControlName="name" required />
+        </mat-form-field>
+        <div *ngIf="name?.invalid && name?.dirty">
+          <div *ngIf="name?.errors?.['required']" class="error">
+            Book name is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <h4 for="isbn">ISBN</h4>
+        <mat-form-field appearance="outline" class="input-field">
+          <input type="text" matInput formControlName="isbn" />
+        </mat-form-field>
+        <div *ngIf="isbn?.invalid && isbn?.dirty">
+          <div *ngIf="isbn?.errors?.['required']" class="error">
+            ISBN is required
+          </div>
+          <div *ngIf="isbn?.errors?.['maxLength']" class="error">
+            ISBN is invalid
+          </div>
+        </div>
+      </div>
+
+      <ng-container formArrayName="authors">
+        <h4 for="authors">Authors</h4>
+        <div *ngFor="let _ of authorsFormArray.controls; index as i">
+          <div>
+            <mat-form-field appearance="outline">
+              <input type="text" matInput [formControlName]="i" />
+            </mat-form-field>
+            <button mat-button (click)="deleteAuthor(i)">Delete</button>
+          </div>
+        </div>
+        <button type="button" mat-raised-button (click)="addAuthor()">
+          Add Author
+        </button>
+      </ng-container>
+
+      <br />
+      <br />
+      <div class="btn-container">
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

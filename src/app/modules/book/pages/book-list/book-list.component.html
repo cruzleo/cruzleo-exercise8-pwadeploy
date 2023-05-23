@@ -1,3 +1,7 @@
+<app-command-bar
+  (addEmitter)="executeAdd()"
+  (deleteAllEmiiter)="executeDeleteAll()"
+></app-command-bar>
 <div class="container">
   <div *ngFor="let data of books; let i = index" class="card-container">
     <app-book-item

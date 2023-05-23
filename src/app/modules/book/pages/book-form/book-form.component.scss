@@ -18,19 +18,8 @@
 }
 
 .btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.btn {
-  margin-top: 1rem;
-}
-
-.radio-btn-container {
-  width: 100%;
   text-align: center;
+  width: 100%;
 }
 
 .input-field {
@@ -47,8 +36,4 @@
   height: 2rem;
   padding-top: 1rem;
   background-color: rgb(247, 174, 174);
-}
-
-.radio-container {
-  margin-bottom: 1.5rem;
 }
