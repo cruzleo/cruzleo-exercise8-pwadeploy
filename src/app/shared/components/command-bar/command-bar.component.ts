@@ -8,6 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class CommandBarComponent {
   @Output() addEmitter: EventEmitter<any> = new EventEmitter<any>();
   @Output() deleteAllEmiiter: EventEmitter<any> = new EventEmitter<any>();
+  @Output() logoutEmitter: EventEmitter<any> = new EventEmitter<any>();
 
   add = () => {
     return this.addEmitter.emit();
@@ -15,5 +16,9 @@ export class CommandBarComponent {
 
   deleteAll = () => {
     return this.deleteAllEmiiter.emit();
+  };
+
+  logout = () => {
+    return this.logoutEmitter.emit();
   };
 }

@@ -1,51 +1,43 @@
 import { Injectable } from '@angular/core';
 import { Book } from '../models/book';
+import { HttpClient } from '@angular/common/http';
+import { Subject, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BookService {
-  books: Book[] = [
-    {
-      id: 1,
-      name: 'Harry Potter and the Order of the Phoenix',
-      authors: ['J.K Rowling'],
-      isbn: '9845213X19',
-      isDeleted: false,
-    },
-    {
-      id: 2,
-      name: 'Pride and Prejudice',
-      authors: ['Jane Austen', 'Anna Quindlen'],
-      isbn: '107823456X',
-      isDeleted: false,
-    },
-    {
-      id: 3,
-      name: 'The Hunger Games',
-      authors: ['Suzanne Collins'],
-      isbn: '7546792318',
-      isDeleted: false,
-    },
-    {
-      id: 4,
-      name: 'The Fault in Our Stars',
-      authors: ['John Green'],
-      isbn: '234123458',
-      isDeleted: false,
-    },
-    {
-      id: 5,
-      name: 'The Da Vinci Code',
-      authors: ['Dan Brown'],
-      isbn: '5621454890',
-      isDeleted: false,
-    },
-  ];
+  serverUrl = 'http://localhost:3000';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getBooks = () => {
-    return this.books;
+    return this.http.get(`${this.serverUrl}/books`).pipe(tap((x) => x));
+  };
+
+  deleteBook = (id: number | undefined) => {
+    return this.http
+      .delete(`${this.serverUrl}/books/${id}`)
+      .pipe(tap((x) => console.log('Successfully delete book', id)));
+  };
+
+  addBook = (book: Book) => {
+    return this.http.post(`${this.serverUrl}/books`, book).pipe(
+      tap((x) => {
+        console.log('Successfully added book');
+      })
+    );
+  };
+
+  updateBook = (book: Book, id: number) => {
+    return this.http.patch(`${this.serverUrl}/books/${id}`, book).pipe(
+      tap((x) => {
+        console.log('Successfully updated book');
+      })
+    );
+  };
+
+  getBookById = (id: number | string) => {
+    return this.http.get(`${this.serverUrl}/books/${id}`).pipe(tap((x) => x));
   };
 }

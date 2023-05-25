@@ -1,0 +1,36 @@
+<div class="container">
+  <mat-card class="form-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <h4 for="username">Username</h4>
+        <mat-form-field class="input-field" appearance="outline">
+          <input matInput type="text" matInput formControlName="username" />
+        </mat-form-field>
+        <div *ngIf="username?.invalid && username?.dirty">
+          <div *ngIf="username?.errors?.['required']" class="error">
+            username is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <h4 for="password">Password</h4>
+        <mat-form-field class="input-field" appearance="outline">
+          <input matInput type="password" matInput formControlName="password" />
+        </mat-form-field>
+        <div *ngIf="password?.invalid && password?.dirty">
+          <div *ngIf="password?.errors?.['required']" class="error">
+            password is required
+          </div>
+          <div *ngIf="password?.errors?.['minlength']" class="error">
+            password is short
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button mat-flat-button color="primary" class="btn">Log in</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

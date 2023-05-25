@@ -4,7 +4,7 @@
       <div class="form-group">
         <h4 for="title">Title</h4>
         <mat-form-field appearance="outline" class="input-field">
-          <input type="text" matInput formControlName="title" />
+          <input type="text" matInput formControlName="title" required />
         </mat-form-field>
         <div *ngIf="title?.invalid && title?.dirty">
           <div *ngIf="title?.errors?.['required']" class="error">
@@ -46,7 +46,7 @@
         <h4 for="comments">Comments</h4>
         <div *ngFor="let _ of commentsFormArray.controls; index as i">
           <div>
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" class="comments-field">
               <input type="text" matInput [formControlName]="i" />
             </mat-form-field>
             <button mat-button (click)="deleteComment(i)">Delete</button>

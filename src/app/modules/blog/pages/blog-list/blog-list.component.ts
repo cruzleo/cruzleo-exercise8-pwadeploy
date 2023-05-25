@@ -1,34 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BlogService } from '../../services/blog.service';
 import { Blog } from '../../models/blog';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
+import { AuthService } from 'src/app/modules/user/services/auth.service';
 
 @Component({
   selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.scss'],
 })
-export class BlogListComponent implements OnInit {
-  constructor(private BlogService: BlogService, private router: Router) {}
+export class BlogListComponent implements OnInit, OnDestroy {
+  constructor(
+    private blogService: BlogService,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
+  blogsSub: Subscription | undefined;
   blogs: Blog[] = [];
 
   ngOnInit(): void {
-    this.blogs = this.BlogService.getBLogs();
-    console.log(this.blogs);
+    this.blogsSub = this.blogService.getBlogs().subscribe((data: any) => {
+      this.blogs = data;
+    });
   }
 
-  executeEdit = (id: number) => {
-    this.router.navigate(['blog/form']);
+  ngOnDestroy(): void {
+    this.blogsSub?.unsubscribe();
+  }
+
+  executeEdit = (id: number | undefined) => {
+    this.router.navigate([`blog/form`], { queryParams: { id: id } });
   };
 
-  executeDelete = (id: number) => {
+  executeDelete = (id: number | undefined) => {
     console.log('delete blog', id);
-    for (let i = 0; i < this.blogs.length; i++) {
-      if (this.blogs[i].id === id) {
-        this.blogs[i].isDeleted = true;
-      }
-    }
+    this.blogsSub = this.blogService.deleteBlog(id).subscribe();
+    window.location.reload();
   };
 
   executeAdd = () => {
@@ -37,6 +46,16 @@ export class BlogListComponent implements OnInit {
 
   executeDeleteAll = () => {
     console.log('delete all');
-    this.blogs = [];
+    const blogIDsArray = this.blogs.map((blog) => blog.id);
+    blogIDsArray.forEach((id) => {
+      this.blogsSub = this.blogService.deleteBlog(id).subscribe();
+    });
+
+    window.location.reload();
+  };
+
+  executeLogout = () => {
+    this.authService.logout();
+    window.location.reload();
   };
 }

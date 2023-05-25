@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormArray,
   FormBuilder,
@@ -6,25 +6,54 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Blog } from '../../models/blog';
+import { BlogService } from '../../services/blog.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog-form',
   templateUrl: './blog-form.component.html',
   styleUrls: ['./blog-form.component.scss'],
 })
-export class BlogFormComponent {
+export class BlogFormComponent implements OnInit {
   blogForm: FormGroup;
   commentsFormArray: FormArray;
+  id: number = 0;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private blogService: BlogService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
     this.blogForm = fb.group({
-      id: [],
       title: ['', [Validators.required]],
       description: ['', [Validators.required]],
       author: ['', [Validators.required]],
       comments: fb.array([new FormControl()]),
     });
     this.commentsFormArray = this.blogForm.controls['comments'] as FormArray;
+  }
+
+  ngOnInit(): void {
+    const param = this.route.snapshot.queryParamMap.get('id');
+    this.id = parseInt(param as string);
+
+    if (this.id) {
+      this.blogService.getBlogById(this.id).subscribe((data: any) => {
+        this.blogForm.setValue({
+          title: data.title,
+          description: data.description,
+          author: data.author,
+          comments: [''],
+        });
+
+        data.comments.forEach((comment: string) => {
+          this.commentsFormArray.push(new FormControl(comment));
+        });
+        this.commentsFormArray.removeAt(0);
+      });
+    }
   }
 
   deleteComment = (i: number) => {
@@ -36,8 +65,23 @@ export class BlogFormComponent {
   };
 
   onSubmit = () => {
-    console.log(this.blogForm.getRawValue());
-    //this.blogForm.reset();
+    let hasTitleError = this.blogForm.get('title')?.errors;
+    let hasDesError = this.blogForm.get('description')?.errors;
+    let hasAuthorError = this.blogForm.get('author')?.errors;
+
+    if (hasTitleError || hasAuthorError || hasDesError) {
+      console.log('Error with inputs');
+    } else {
+      if (this.id) {
+        const blog: Blog = this.blogForm.getRawValue();
+        this.blogService.updateBlog(blog, this.id).subscribe();
+        this.router.navigate(['blog']);
+      } else {
+        const blog: Blog = this.blogForm.getRawValue();
+        this.blogService.addBlog(blog).subscribe();
+        this.router.navigate(['blog']);
+      }
+    }
   };
 
   get title() {

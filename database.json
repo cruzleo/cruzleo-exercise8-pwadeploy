@@ -1,0 +1,84 @@
+{
+  "blogs": [
+    {
+      "id": 3,
+      "title": "Pawsome Puzzles: A Feline Adventure",
+      "description": "Embark on a feline-themed puzzle extravaganza where you will solve cat-themed riddles, unravel whimsical mazes, and piece together delightful jigsaw puzzles. Challenge your wits and unleash your inner cat lover as you navigate through a world filled with adorable whiskered companions and colorful challenges.",
+      "author": "Leo Cruz",
+      "comments": [
+        "wow",
+        "nice"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Dance Party Mania: Groove to the Beat!",
+      "description": "Get ready to bust a move and show off your dance skills in this high-energy rhythm game. From hip-hop to salsa, tap your feet to the electrifying beats and follow the dance routines. Unlock new dance styles, compete with friends, and earn the title of the ultimate dance champion.",
+      "author": "Keshi",
+      "comments": [
+        "wow",
+        "nice"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Kitchen Master: Cooking with Chaos",
+      "description": "Enter the kitchen chaos and take on the role of a culinary mastermind in this hilarious cooking simulation game. Navigate through crazy cooking challenges, concoct bizarre recipes, and overcome unexpected obstacles. From cooking with unconventional ingredients to managing kitchen mishaps, embrace the madness and become a legendary chef in this culinary adventure.",
+      "author": "Cooking Mama",
+      "comments": [
+        "wow",
+        "not so nice"
+      ]
+    }
+  ],
+  "books": [
+    {
+      "id": 3,
+      "name": "The Mocking Jay",
+      "authors": [
+        "Suzanne Collins"
+      ],
+      "isbn": "7546792318"
+    },
+    {
+      "id": 3,
+      "name": "The Hunger Games",
+      "authors": [
+        "Suzanne Collins"
+      ],
+      "isbn": "7546792318"
+    },
+    {
+      "name": "Harry Potter",
+      "authors": [
+        "J.K Rowling"
+      ],
+      "isbn": "1232454567",
+      "id": 6
+    }
+  ],
+  "users": [
+    {
+      "email": "leocruz@email.com",
+      "name": "leocruz",
+      "username": "lcruz",
+      "password": "leocruz22",
+      "id": 1
+    },
+    {
+      "username": "asdasdasd",
+      "password": "asdasdasdas",
+      "id": 2
+    },
+    {
+      "username": "asdasd",
+      "password": "asdadasd",
+      "id": 3
+    },
+    {
+      "username": "asdasdas",
+      "password": "asdasdasdas",
+      "id": 4
+    }
+  ]
+}

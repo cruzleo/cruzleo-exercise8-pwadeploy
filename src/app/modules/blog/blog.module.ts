@@ -12,6 +12,7 @@ import { BlogFormComponent } from './pages/blog-form/blog-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [BlogItemComponent, BlogListComponent, BlogFormComponent],
@@ -26,6 +27,7 @@ import { MatInputModule } from '@angular/material/input';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    HttpClientModule,
   ],
 })
 export class BlogModule {}

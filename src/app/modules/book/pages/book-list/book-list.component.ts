@@ -8,32 +8,42 @@ import {
 import { BookService } from '../../services/book.service';
 import { Book } from '../../models/book';
 import { Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
+import { AuthService } from 'src/app/modules/user/services/auth.service';
 
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.scss'],
 })
-export class BookListComponent implements OnInit {
-  constructor(private BookService: BookService, private router: Router) {}
+export class BookListComponent implements OnInit, OnDestroy {
+  constructor(
+    private bookService: BookService,
+    private router: Router,
+    private authService: AuthService
+  ) {}
+
+  bookSub: Subscription | undefined;
   books: Book[] = [];
 
   ngOnInit(): void {
-    this.books = this.BookService.getBooks();
+    this.bookSub = this.bookService.getBooks().subscribe((data: any) => {
+      this.books = data;
+    });
   }
 
-  executeEdit = (id: number) => {
-    //this.router.navigate([`book/form/${id}`]);
-    this.router.navigate([`book/form`]);
+  ngOnDestroy(): void {
+    this.bookSub?.unsubscribe;
+  }
+
+  executeEdit = (id: number | undefined) => {
+    this.router.navigate([`book/form`], { queryParams: { id: id } });
   };
 
-  executeDelete = (id: number) => {
-    console.log('delete book', id);
-    for (let i = 0; i < this.books.length; i++) {
-      if (this.books[i].id === id) {
-        this.books[i].isDeleted = true;
-      }
-    }
+  executeDelete = (id: number | undefined) => {
+    console.log('delete blog', id);
+    this.bookSub = this.bookService.deleteBook(id).subscribe();
+    window.location.reload();
   };
 
   executeAdd = () => {
@@ -41,6 +51,17 @@ export class BookListComponent implements OnInit {
   };
 
   executeDeleteAll = () => {
-    this.books = [];
+    console.log('delete all');
+    const bookIDsArray = this.books.map((book) => book.id);
+    bookIDsArray.forEach((id) => {
+      this.bookSub = this.bookService.deleteBook(id).subscribe();
+    });
+
+    window.location.reload();
+  };
+
+  executeLogout = () => {
+    this.authService.logout();
+    window.location.reload();
   };
 }

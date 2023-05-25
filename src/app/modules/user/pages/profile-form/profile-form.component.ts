@@ -18,13 +18,12 @@ export class ProfileFormComponent {
       email: ['', [Validators.required, Validators.email]],
       name: ['', [Validators.required]],
       bio: [''],
-      isActive: [''],
+      active: [''],
     });
   }
 
   onSubmit = () => {
     console.log(this.userForm.getRawValue());
-    //this.userForm.reset();
   };
 
   get email() {

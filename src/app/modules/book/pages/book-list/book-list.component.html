@@ -1,11 +1,11 @@
 <app-command-bar
   (addEmitter)="executeAdd()"
   (deleteAllEmiiter)="executeDeleteAll()"
+  (logoutEmitter)="executeLogout()"
 ></app-command-bar>
 <div class="container">
   <div *ngFor="let data of books; let i = index" class="card-container">
     <app-book-item
-      *ngIf="!data.isDeleted"
       [booksInput]="data"
       (editActionEmitter)="executeEdit(data.id)"
       (deleteActionEmitter)="executeDelete(data.id)"
