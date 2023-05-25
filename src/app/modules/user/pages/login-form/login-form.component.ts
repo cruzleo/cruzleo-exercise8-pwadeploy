@@ -44,8 +44,6 @@ export class LoginFormComponent {
           ) {
             this.authService.createSession(user);
             this.router.navigate(['']);
-          } else {
-            console.log('Invalid login');
           }
         });
       });
