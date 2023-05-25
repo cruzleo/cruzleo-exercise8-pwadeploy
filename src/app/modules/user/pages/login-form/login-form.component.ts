@@ -36,9 +36,19 @@ export class LoginFormComponent {
       console.log('invalid login');
     } else {
       let user: User = this.loginForm.getRawValue();
-      this.authService.login(user).subscribe((data) => {
-        this.authService.createSession(user);
-        this.router.navigate(['']);
+      this.authService.login().subscribe((data: any) => {
+        data.forEach((element: any) => {
+          if (
+            element.username === user.username &&
+            element.password === user.password
+          ) {
+            this.authService.createSession(user);
+            this.router.navigate(['']);
+          }
+          {
+            console.log('Invalid login');
+          }
+        });
       });
     }
   };
@@ -49,5 +59,9 @@ export class LoginFormComponent {
 
   get password() {
     return this.loginForm.get('password') as FormControl;
+  }
+
+  redirectSignin() {
+    this.router.navigate(['signup']);
   }
 }

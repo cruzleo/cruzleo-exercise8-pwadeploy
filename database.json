@@ -66,19 +66,11 @@
       "id": 1
     },
     {
-      "username": "asdasdasd",
-      "password": "asdasdasdas",
+      "email": "crzle@email.com",
+      "name": "Leo Orolfo Cruz",
+      "username": "cruzleo",
+      "password": "admin2255",
       "id": 2
-    },
-    {
-      "username": "asdasd",
-      "password": "asdadasd",
-      "id": 3
-    },
-    {
-      "username": "asdasdas",
-      "password": "asdasdasdas",
-      "id": 4
     }
   ]
 }

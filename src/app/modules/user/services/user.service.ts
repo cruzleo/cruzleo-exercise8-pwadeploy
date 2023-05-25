@@ -10,4 +10,8 @@ export class UserService {
   serverUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
+
+  getUserById = (id: number | undefined) => {
+    return this.http.get(`${this.serverUrl}/users/${id}`).pipe(tap((x) => x));
+  };
 }

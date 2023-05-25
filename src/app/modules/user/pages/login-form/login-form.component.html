@@ -30,6 +30,15 @@
 
       <div class="btn-container">
         <button mat-flat-button color="primary" class="btn">Log in</button>
+        <button
+          [ngStyle]="{ marginLeft: '1rem' }"
+          mat-flat-button
+          color="warn"
+          class="btn"
+          (click)="redirectSignin()"
+        >
+          Sign in
+        </button>
       </div>
     </form>
   </mat-card>

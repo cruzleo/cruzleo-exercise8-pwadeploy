@@ -23,16 +23,12 @@ export class AuthService {
     );
   };
 
-  login = (user: User) => {
-    return this.http.post(`${this.serverUrl}/users`, user, httpOptions).pipe(
+  login = () => {
+    return this.http.get(`${this.serverUrl}/users`).pipe(
       tap((x) => {
         console.log('login..');
       })
     );
-  };
-
-  getUserById = (id: number | undefined) => {
-    return this.http.get(`${this.serverUrl}/users/${id}`).pipe(tap((x) => x));
   };
 
   createSession = (user: User) => {
