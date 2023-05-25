@@ -29,6 +29,15 @@
         "wow",
         "not so nice"
       ]
+    },
+    {
+      "title": "Cats Life: is Cat Calling a bad thing to do to a stray cat?",
+      "description": "pspspsssspspsss, Meow meow",
+      "author": "Neko Hikaru",
+      "comments": [
+        "yes, meowt"
+      ],
+      "id": 6
     }
   ],
   "books": [
@@ -55,6 +64,14 @@
       ],
       "isbn": "1232454567",
       "id": 6
+    },
+    {
+      "name": "Book of Life",
+      "authors": [
+        "Tommy Cook"
+      ],
+      "isbn": "109234567X",
+      "id": 7
     }
   ],
   "users": [
