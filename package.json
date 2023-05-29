@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href cruzleo/login",
+    "build": "ng build --base-href cruzleo",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
