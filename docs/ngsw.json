@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1685356663465,
-  "index": "cruzleo-app/login/index.html",
+  "timestamp": 1685357286000,
+  "index": "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,17 +11,17 @@
         "ignoreVary": true
       },
       "urls": [
-        "cruzleo-app/login/124.140b9e9e75011557.js",
-        "cruzleo-app/login/494.458bb90e5bc97c12.js",
-        "cruzleo-app/login/507.991720b08128d2c8.js",
-        "cruzleo-app/login/common.cbd67d4925a5094b.js",
-        "cruzleo-app/login/favicon.ico",
-        "cruzleo-app/login/index.html",
-        "cruzleo-app/login/main.cd40fc8437cb74ef.js",
-        "cruzleo-app/login/manifest.webmanifest",
-        "cruzleo-app/login/polyfills.9c7859a63aaad981.js",
-        "cruzleo-app/login/runtime.813e57a126c79ef3.js",
-        "cruzleo-app/login/styles.5378005d74d7a822.css"
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/124.140b9e9e75011557.js",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/494.458bb90e5bc97c12.js",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/507.991720b08128d2c8.js",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/common.cbd67d4925a5094b.js",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/favicon.ico",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/index.html",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/main.cd40fc8437cb74ef.js",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/manifest.webmanifest",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/polyfills.9c7859a63aaad981.js",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/runtime.813e57a126c79ef3.js",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/styles.5378005d74d7a822.css"
       ],
       "patterns": []
     },
@@ -33,39 +33,39 @@
         "ignoreVary": true
       },
       "urls": [
-        "cruzleo-app/login/assets/icons/icon-128x128.png",
-        "cruzleo-app/login/assets/icons/icon-144x144.png",
-        "cruzleo-app/login/assets/icons/icon-152x152.png",
-        "cruzleo-app/login/assets/icons/icon-192x192.png",
-        "cruzleo-app/login/assets/icons/icon-384x384.png",
-        "cruzleo-app/login/assets/icons/icon-512x512.png",
-        "cruzleo-app/login/assets/icons/icon-72x72.png",
-        "cruzleo-app/login/assets/icons/icon-96x96.png"
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-128x128.png",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-144x144.png",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-152x152.png",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-192x192.png",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-384x384.png",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-512x512.png",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-72x72.png",
+        "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "cruzleo-app/login/124.140b9e9e75011557.js": "b4fd59ddb07cd3b92de38407934db3e73cc9abc1",
-    "cruzleo-app/login/494.458bb90e5bc97c12.js": "396599757e516c7923a59785a830af8fe2218064",
-    "cruzleo-app/login/507.991720b08128d2c8.js": "b2113e6085fcfd5ade80d3963c5889a48aed6f16",
-    "cruzleo-app/login/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "cruzleo-app/login/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "cruzleo-app/login/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "cruzleo-app/login/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "cruzleo-app/login/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "cruzleo-app/login/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "cruzleo-app/login/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "cruzleo-app/login/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "cruzleo-app/login/common.cbd67d4925a5094b.js": "effb63008ce013524cb8f5537ac75d874c77df85",
-    "cruzleo-app/login/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "cruzleo-app/login/index.html": "68e06633880773798f79366d9a176488e6d287a5",
-    "cruzleo-app/login/main.cd40fc8437cb74ef.js": "8c62fc1d60673fc8ad7f110eceffd3d83eaa0894",
-    "cruzleo-app/login/manifest.webmanifest": "e663c6b12f02f3bc04fee0805e908ea1168d16b9",
-    "cruzleo-app/login/polyfills.9c7859a63aaad981.js": "f613feb10d06d697ca8b0689f20c4db94fb7cc0d",
-    "cruzleo-app/login/runtime.813e57a126c79ef3.js": "7eba248c9d49b7f08184406fc9dbefdca31556b6",
-    "cruzleo-app/login/styles.5378005d74d7a822.css": "ae124c95fbad1df4229912c80ca5700d9d647369"
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/124.140b9e9e75011557.js": "b4fd59ddb07cd3b92de38407934db3e73cc9abc1",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/494.458bb90e5bc97c12.js": "396599757e516c7923a59785a830af8fe2218064",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/507.991720b08128d2c8.js": "b2113e6085fcfd5ade80d3963c5889a48aed6f16",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/common.cbd67d4925a5094b.js": "effb63008ce013524cb8f5537ac75d874c77df85",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/index.html": "abd932b90fc6364975fa7a00c3e8f63ef58c9fb8",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/main.cd40fc8437cb74ef.js": "8c62fc1d60673fc8ad7f110eceffd3d83eaa0894",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/manifest.webmanifest": "e663c6b12f02f3bc04fee0805e908ea1168d16b9",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/polyfills.9c7859a63aaad981.js": "f613feb10d06d697ca8b0689f20c4db94fb7cc0d",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/runtime.813e57a126c79ef3.js": "7eba248c9d49b7f08184406fc9dbefdca31556b6",
+    "https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login/styles.5378005d74d7a822.css": "ae124c95fbad1df4229912c80ca5700d9d647369"
   },
   "navigationUrls": [
     {

@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href cruzleo-app/login",
+    "build": "ng build --base-href https://github.com/cruzleo/cruzleo-exercise8-pwadeploy/login",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
