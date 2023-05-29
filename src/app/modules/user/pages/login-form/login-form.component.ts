@@ -42,7 +42,7 @@ export class LoginFormComponent {
             element.username === user.username &&
             element.password === user.password
           ) {
-            this.authService.createSession(user);
+            this.authService.createSession(element);
             this.router.navigate(['']);
           }
         });

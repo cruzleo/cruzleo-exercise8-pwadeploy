@@ -68,10 +68,12 @@
   "users": [
     {
       "email": "leocruz@email.com",
-      "name": "leocruz",
+      "name": "lcruz",
       "username": "lcruz",
       "password": "leocruz22",
-      "id": 1
+      "id": 1,
+      "bio": "Hello, world",
+      "active": "true"
     },
     {
       "email": "crzle@email.com",
