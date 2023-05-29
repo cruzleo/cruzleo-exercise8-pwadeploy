@@ -81,6 +81,13 @@
       "username": "cruzleo",
       "password": "admin2255",
       "id": 2
+    },
+    {
+      "email": "cruzleo@gmail.com",
+      "name": "tomCruz",
+      "username": "tommycruz",
+      "password": "admin2255",
+      "id": 3
     }
   ]
 }
