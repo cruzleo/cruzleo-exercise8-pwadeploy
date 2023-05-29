@@ -43,7 +43,10 @@ export class BookListComponent implements OnInit, OnDestroy {
   executeDelete = (id: number | undefined) => {
     console.log('delete blog', id);
     this.bookSub = this.bookService.deleteBook(id).subscribe();
-    window.location.reload();
+    this.bookSub?.unsubscribe;
+    this.bookSub = this.bookService.getBooks().subscribe((data: any) => {
+      this.books = data;
+    });
   };
 
   executeAdd = () => {
@@ -57,11 +60,14 @@ export class BookListComponent implements OnInit, OnDestroy {
       this.bookSub = this.bookService.deleteBook(id).subscribe();
     });
 
-    window.location.reload();
+    this.bookSub?.unsubscribe;
+    this.bookSub = this.bookService.getBooks().subscribe((data: any) => {
+      this.books = data;
+    });
   };
 
   executeLogout = () => {
     this.authService.logout();
-    window.location.reload();
+    this.router.navigate(['login']);
   };
 }

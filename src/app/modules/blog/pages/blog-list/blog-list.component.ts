@@ -37,7 +37,11 @@ export class BlogListComponent implements OnInit, OnDestroy {
   executeDelete = (id: number | undefined) => {
     console.log('delete blog', id);
     this.blogsSub = this.blogService.deleteBlog(id).subscribe();
-    window.location.reload();
+
+    this.blogsSub?.unsubscribe();
+    this.blogsSub = this.blogService.getBlogs().subscribe((data: any) => {
+      this.blogs = data;
+    });
   };
 
   executeAdd = () => {
@@ -51,11 +55,14 @@ export class BlogListComponent implements OnInit, OnDestroy {
       this.blogsSub = this.blogService.deleteBlog(id).subscribe();
     });
 
-    window.location.reload();
+    this.blogsSub?.unsubscribe();
+    this.blogsSub = this.blogService.getBlogs().subscribe((data: any) => {
+      this.blogs = data;
+    });
   };
 
   executeLogout = () => {
     this.authService.logout();
-    window.location.reload();
+    this.router.navigate(['login']);
   };
 }
