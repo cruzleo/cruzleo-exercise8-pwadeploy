@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Blog } from '../models/blog';
 import { HttpClient } from '@angular/common/http';
-import { Subject, tap } from 'rxjs';
+import { Subject, map, tap } from 'rxjs';
+import { UserService } from '../../user/services/user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,11 +11,15 @@ export class BlogService {
   serverUrl = 'http://localhost:3000';
 
   blogsSubject = new Subject();
-
-  constructor(private http: HttpClient) {}
+  currentUser = this.userService.getCurrentUser();
+  constructor(private http: HttpClient, private userService: UserService) {}
 
   getBlogs = () => {
-    return this.http.get(`${this.serverUrl}/blogs`).pipe(tap((x) => x));
+    return this.http.get(`${this.serverUrl}/blogs`).pipe(
+      map((x: any) => {
+        return x.filter((data: Blog) => data.userId === this.currentUser.id);
+      })
+    );
   };
 
   deleteBlog = (id: number | undefined) => {

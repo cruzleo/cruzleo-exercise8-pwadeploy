@@ -1,18 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Book } from '../models/book';
 import { HttpClient } from '@angular/common/http';
-import { Subject, tap } from 'rxjs';
+import { Subject, tap, filter, map } from 'rxjs';
+import { UserService } from '../../user/services/user.service';
+import { User } from '../../user/models/user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BookService {
   serverUrl = 'http://localhost:3000';
+  currentUser = this.userService.getCurrentUser();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private userService: UserService) {}
 
   getBooks = () => {
-    return this.http.get(`${this.serverUrl}/books`).pipe(tap((x) => x));
+    return this.http.get(`${this.serverUrl}/books`).pipe(
+      map((x: any) => {
+        return x.filter((data: Book) => data.userId === this.currentUser.id);
+      })
+    );
   };
 
   deleteBook = (id: number | undefined) => {

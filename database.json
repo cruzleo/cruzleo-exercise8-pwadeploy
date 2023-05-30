@@ -5,46 +5,60 @@
       "title": "Pawsome Puzzles: A Feline Adventure",
       "description": "Embark on a feline-themed puzzle extravaganza where you will solve cat-themed riddles, unravel whimsical mazes, and piece together delightful jigsaw puzzles. Challenge your wits and unleash your inner cat lover as you navigate through a world filled with adorable whiskered companions and colorful challenges.",
       "author": "Leo Cruz",
-      "comments": ["wow", "nice"]
+      "comments": [
+        "wow",
+        "nice"
+      ],
+      "userId": 1
     },
     {
       "id": 4,
       "title": "Dance Party Mania: Groove to the Beat!",
       "description": "Get ready to bust a move and show off your dance skills in this high-energy rhythm game. From hip-hop to salsa, tap your feet to the electrifying beats and follow the dance routines. Unlock new dance styles, compete with friends, and earn the title of the ultimate dance champion.",
       "author": "Keshi",
-      "comments": ["wow", "nice"]
+      "comments": [
+        "wow",
+        "nice"
+      ],
+      "userId": 2
     }
   ],
   "books": [
     {
       "id": 3,
       "name": "The Mocking Jay",
-      "authors": ["Suzanne Collins"],
-      "isbn": "7546792318"
+      "authors": [
+        "Suzanne Collins"
+      ],
+      "isbn": "7546792318",
+      "userId": 1
     },
     {
       "id": 3,
       "name": "The Hunger Games",
-      "authors": ["Suzanne Collins"],
-      "isbn": "7546792318"
+      "authors": [
+        "Suzanne Collins"
+      ],
+      "isbn": "7546792318",
+      "userId": 2
     },
     {
       "name": "Harry Potter",
-      "authors": ["J.K Rowling"],
+      "authors": [
+        "J.K Rowling"
+      ],
       "isbn": "1232454567",
-      "id": 6
+      "id": 6,
+      "userId": 1
     },
     {
       "name": "Book of Life",
-      "authors": ["Tommy Cook"],
+      "authors": [
+        "Tommy Cook"
+      ],
       "isbn": "109234567X",
-      "id": 7
-    },
-    {
-      "name": "asdas",
-      "authors": [null],
-      "isbn": "dasdasd",
-      "id": 8
+      "id": 7,
+      "userId": 2
     }
   ],
   "users": [

@@ -9,6 +9,7 @@ import {
 import { Blog } from '../../models/blog';
 import { BlogService } from '../../services/blog.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/modules/user/services/user.service';
 
 @Component({
   selector: 'app-blog-form',
@@ -19,18 +20,21 @@ export class BlogFormComponent implements OnInit {
   blogForm: FormGroup;
   commentsFormArray: FormArray;
   id: number = 0;
+  currentUser = this.userService.getCurrentUser();
 
   constructor(
     private fb: FormBuilder,
     private blogService: BlogService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private userService: UserService
   ) {
     this.blogForm = fb.group({
       title: ['', [Validators.required]],
       description: ['', [Validators.required]],
       author: ['', [Validators.required]],
       comments: fb.array([new FormControl()]),
+      userId: [this.currentUser.id],
     });
     this.commentsFormArray = this.blogForm.controls['comments'] as FormArray;
   }
@@ -46,6 +50,7 @@ export class BlogFormComponent implements OnInit {
           description: data.description,
           author: data.author,
           comments: [''],
+          userId: this.currentUser.id,
         });
 
         data.comments.forEach((comment: string) => {

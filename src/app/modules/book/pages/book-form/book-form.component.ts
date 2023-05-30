@@ -9,6 +9,7 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../models/book';
+import { UserService } from 'src/app/modules/user/services/user.service';
 
 @Component({
   selector: 'app-book-form',
@@ -19,17 +20,20 @@ export class BookFormComponent implements OnInit {
   bookForm: FormGroup;
   authorsFormArray: FormArray;
   id: number = 0;
+  currentUser = this.userService.getCurrentUser();
 
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private bookService: BookService
+    private bookService: BookService,
+    private userService: UserService
   ) {
     this.bookForm = fb.group({
       name: ['', [Validators.required]],
       authors: fb.array([new FormControl()], Validators.required),
       isbn: ['', [Validators.required, Validators.maxLength(10)]],
+      userId: [this.currentUser.id],
     });
     this.authorsFormArray = this.bookForm.controls['authors'] as FormArray;
   }
@@ -44,6 +48,7 @@ export class BookFormComponent implements OnInit {
           name: data.name,
           authors: [''],
           isbn: data.isbn,
+          userId: this.currentUser.id,
         });
 
         data.authors.forEach((author: string) => {

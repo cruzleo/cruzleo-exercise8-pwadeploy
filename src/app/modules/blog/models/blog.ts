@@ -4,4 +4,5 @@ export interface Blog {
   description: string;
   author: string;
   comments: string[];
+  userId: number;
 }
