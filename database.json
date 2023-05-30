@@ -84,6 +84,13 @@
       "username": "tommycruz",
       "password": "admin2255",
       "id": 3
+    },
+    {
+      "email": "tom@email.com",
+      "name": "tom",
+      "username": "tomboy",
+      "password": "admin2255",
+      "id": 4
     }
   ]
 }
